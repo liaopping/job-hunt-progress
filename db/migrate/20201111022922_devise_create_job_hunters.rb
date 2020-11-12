@@ -38,7 +38,7 @@ class DeviseCreateJobHunters < ActiveRecord::Migration[5.2]
 
     add_index :job_hunters, :email,                unique: true
     add_index :job_hunters, :reset_password_token, unique: true
-    # add_index :job_hunters, :confirmation_token,   unique: true
-    # add_index :job_hunters, :unlock_token,         unique: true
+    add_index :job_hunters, :confirmation_token,   unique: true
+    add_index :job_hunters, :unlock_token,         unique: true
   end
 end

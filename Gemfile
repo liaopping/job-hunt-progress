@@ -13,6 +13,8 @@ gem 'turbolinks', '~> 5' # makes navigating your web application faster
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease
 gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'devise'
+gem 'dotenv-rails'
+gem 'letter_opener_web'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
