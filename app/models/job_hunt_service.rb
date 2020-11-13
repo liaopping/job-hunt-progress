@@ -1,0 +1,2 @@
+class JobHuntService < ApplicationRecord
+end
