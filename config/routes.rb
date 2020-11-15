@@ -3,16 +3,18 @@ Rails.application.routes.draw do
     :registrations => "job_hunters/registrations",
     :sessions => "job_hunters/sessions"
   }
-
+  
   devise_scope :job_hunter do
     get 'login', to: 'devise/sessions#new'
     post 'login', to: 'devise/sessions#create'
     delete 'signout', to: 'devise/sessions#destroy'
   end
-
+  
   root 'companies#index'
   get 'companies/show'
-
+  get 'job-hunt-services', to: 'job_hunt_services#index'
+  get 'job-hunt-services/show', to: 'job_hunt_services#show'
+  
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

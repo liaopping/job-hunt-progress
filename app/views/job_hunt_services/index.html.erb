@@ -1,0 +1,8 @@
+<h1>登録媒体/エージェント一覧</h1>
+<ul>
+  <% @job_hunt_services.each do |job_hunt_service| %>
+    媒体/エージェント： <%= job_hunt_service.name %> <br>
+  <% end %>
+</ul>
+
+<% paginate @job_hunt_services %>
