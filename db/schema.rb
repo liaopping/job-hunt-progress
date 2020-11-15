@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_234506) do
+ActiveRecord::Schema.define(version: 2020_11_15_063025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,4 +53,31 @@ ActiveRecord::Schema.define(version: 2020_11_13_234506) do
     t.index ["unlock_token"], name: "index_job_hunters_on_unlock_token", unique: true
   end
 
+  create_table "selections", force: :cascade do |t|
+    t.bigint "job_hunter_id"
+    t.bigint "company_id"
+    t.bigint "job_hunt_service_id"
+    t.date "date_of_attended_company_information_session"
+    t.date "date_of_got_a_scout"
+    t.date "date_of_applied"
+    t.date "date_of_first_casual_interview"
+    t.date "date_of_second_casual_interview"
+    t.date "date_of_first_interview"
+    t.date "date_of_second_interview"
+    t.date "date_of_third_interview"
+    t.date "date_of_fourth_interview"
+    t.date "date_of_fifth_interview"
+    t.date "date_of_got_a_job"
+    t.date "date_of_be_prayed"
+    t.date "date_of_prayed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_selections_on_company_id"
+    t.index ["job_hunt_service_id"], name: "index_selections_on_job_hunt_service_id"
+    t.index ["job_hunter_id"], name: "index_selections_on_job_hunter_id"
+  end
+
+  add_foreign_key "selections", "companies"
+  add_foreign_key "selections", "job_hunt_services"
+  add_foreign_key "selections", "job_hunters"
 end
