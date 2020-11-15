@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching;
 gem 'devise'
 gem 'dotenv-rails'
 gem 'letter_opener_web'
+gem 'kaminari'
+gem 'seed-fu'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
