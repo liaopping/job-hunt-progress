@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'companies/show'
   get 'job-hunt-services', to: 'job_hunt_services#index'
   get 'job-hunt-services/show', to: 'job_hunt_services#show'
+  get 'selections', to:'selections#index'
+  get 'selections/show', to:'selections#show'
   
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
