@@ -1,0 +1,8 @@
+<h1>応募一覧</h1>
+<ul>
+  <% @selections.each do |selection| %>
+    会社ID： <%= selection.company_id %> <br>
+  <% end %>
+</ul>
+
+<% paginate @selections %>
