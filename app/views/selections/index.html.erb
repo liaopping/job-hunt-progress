@@ -1,7 +1,8 @@
 <h1>応募一覧</h1>
 <ul>
   <% @selections.each do |selection| %>
-    会社ID： <%= selection.company_id %> <br>
+    会社名： <%= selection.company.name %> <br>
+    <%# 名前をshowアクションに飛ばす %>
   <% end %>
 </ul>
 
