@@ -13,7 +13,7 @@
         <header>
             <nav>
                 <% if job_hunter_signed_in? %>
-                <strong><%= link_to current_job_hunter.email, companies_show_path %></strong>
+                <strong><%= link_to current_job_hunter.email, company_path(:id) %></strong>
                 <%= link_to 'プロフィール変更', edit_job_hunter_registration_path %>
                 <%= link_to 'ログアウト', destroy_job_hunter_session_path, method: :delete %>
             <% else %>

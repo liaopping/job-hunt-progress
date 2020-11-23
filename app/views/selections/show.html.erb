@@ -1,2 +1,18 @@
-<h1>Selections#show</h1>
-<p>Find me in app/views/selections/show.html.erb</p>
+<h1><%= @selection.company.name %></h1>
+<h2>選考ステータス： <%#=%></h2>
+<h2>利用媒体/エージェント： <%= @selection.job_hunt_service.name %></h2>
+<ul>
+  <li>内定通知： <%= @selection.date_of_got_a_job %></li>
+  <li>選考落ち： <%= @selection.date_of_be_prayed %></li>
+  <li>辞退： <%= @selection.date_of_prayed %></li>
+  <li>5次面接： <%= @selection.date_of_fifth_interview%></li>
+  <li>4次面接： <%= @selection.date_of_fourth_interview%></li>
+  <li>3次面接： <%= @selection.date_of_third_interview %></li>
+  <li>2次面接： <%= @selection.date_of_second_interview %></li>
+  <li>1次面接： <%= @selection.date_of_first_interview %></li>
+  <li>カジュアル面談②： <%= @selection.date_of_second_casual_interview %></li>
+  <li>カジュアル面談①： <%= @selection.date_of_first_casual_interview %></li>
+  <li>書類応募： <%= @selection.date_of_applied %></li>
+  <li>スカウト受信： <%= @selection.date_of_got_a_scout %></li>
+  <li>会社説明会： <%= @selection.date_of_attended_company_information_session %></li>
+</ul>

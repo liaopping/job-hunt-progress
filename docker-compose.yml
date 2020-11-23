@@ -16,6 +16,8 @@ services:
     image: rails
     container_name: 'app'
     command: bundle exec rails s -p 80 -b '0.0.0.0'
+    stdin_open: true
+    tty: true
     ports:
       - "80:80"
     environment:

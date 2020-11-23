@@ -9,13 +9,8 @@ Rails.application.routes.draw do
     post 'login', to: 'devise/sessions#create'
     delete 'signout', to: 'devise/sessions#destroy'
   end
-  
-  root 'companies#index'
-  get 'companies/show'
-  get 'job-hunt-services', to: 'job_hunt_services#index'
-  get 'job-hunt-services/show', to: 'job_hunt_services#show'
-  get 'selections', to:'selections#index'
-  get 'selections/show', to:'selections#show'
+
+  resources :companies, :job_hunt_services, :selections
   
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
