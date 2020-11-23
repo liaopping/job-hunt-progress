@@ -5,5 +5,6 @@ class SelectionsController < ApplicationController
   end
 
   def show
+    @selection = Selection.find(params[:id])
   end
 end
