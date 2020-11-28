@@ -1,7 +1,8 @@
 class SelectionsController < ApplicationController
+  before_action :authenticate_job_hunter!
+
   def index
-    current_job_hunter_id = current_job_hunter.id
-    @selections = Selection.where(job_hunter_id: current_job_hunter_id).page(params[:page])
+    @selections = Selection.where(job_hunter_id: current_job_hunter.id).page(params[:page])
   end
 
   def show

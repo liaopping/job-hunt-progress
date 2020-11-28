@@ -2,7 +2,7 @@
 <ul>
   <% @selections.each do |selection| %>
     <% name_of_selection = selection.company.name %> <br>
-    <%= link_to "会社名： #{name_of_selection}", selection_path(selection.id) %>
+    <%= link_to "会社名： #{name_of_selection}", job_hunter_selection_path(id: selection.id) %>
   <% end %>
 </ul>
 
