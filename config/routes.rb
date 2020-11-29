@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   devise_scope :job_hunter do
     root 'job_hunters/sessions#new'
-    get 'login', to: 'devise/sessions#new'
-    post 'login', to: 'devise/sessions#create'
-    delete 'signout', to: 'devise/sessions#destroy'
   end
 
   devise_for :job_hunters, :controllers => {
