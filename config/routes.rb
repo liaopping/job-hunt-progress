@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :companies, :job_hunt_services
   resources :job_hunters do
-    resources :selections, only: [:index, :show]
+    resources :selections
   end
 
   if Rails.env.development?

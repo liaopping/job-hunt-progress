@@ -1,0 +1,41 @@
+<h1>新しい応募状況を投稿する</h1>
+<%= form_with model: @selection, url: job_hunter_selections_path do |f| %>
+  <%#= f.hidden_field job_hunter_id: current_job_hunter.id %>
+  <%= f.fields_for :companies do |company_form| %>
+    <%= company_form.label :name, '企業名' %>
+    <%= company_form.text_field :name %>
+    <%= company_form.hidden_field :id %>
+  <% end %>
+  <%= f.fields_for :job_hunt_services do |job_hunt_service_form| %>
+    <%= job_hunt_service_form.label :name, '媒体/エージェント名' %>
+    <%= job_hunt_service_form.text_field :name %>
+    <%= job_hunt_service_form.hidden_field :id %>
+  <% end %>
+  <%= f.label :date_of_attended_company_information_session, '会社説明会参加日時' %>
+  <%= f.date_field :date_of_attended_company_information_session %>
+  <%= f.label :date_of_got_a_scout, 'スカウト受信日時' %>
+  <%= f.date_field :date_of_got_a_scout %>
+  <%= f.label :date_of_applied, '応募日時' %>
+  <%= f.date_field :date_of_applied %>
+  <%= f.label :date_of_first_casual_interview, 'カジュアル面談①日時' %>
+  <%= f.date_field :date_of_first_casual_interview %>
+  <%= f.label :date_of_second_casual_interview, 'カジュアル面談②日時' %>
+  <%= f.date_field :date_of_second_casual_interview %>
+  <%= f.label :date_of_first_interview, '面接①日時' %>
+  <%= f.date_field :date_of_first_interview %>
+  <%= f.label :date_of_second_interview, '面接②日時' %>
+  <%= f.date_field :date_of_second_interview %>
+  <%= f.label :date_of_third_interview, '面接③日時' %>
+  <%= f.date_field :date_of_third_interview %>
+  <%= f.label :date_of_fourth_interview, '面接④日時' %>
+  <%= f.date_field :date_of_fourth_interview %>
+  <%= f.label :date_of_fifth_interview, '面接⑤日時' %>
+  <%= f.date_field :date_of_fifth_interview %>
+  <%= f.label :date_of_got_a_job, '内定日時' %>
+  <%= f.date_field :date_of_got_a_job %>
+  <%= f.label :date_of_be_prayed, 'お祈り日時' %>
+  <%= f.date_field :date_of_be_prayed %>
+  <%= f.label :date_of_prayed, '逆お祈り日時' %>
+  <%= f.date_field :date_of_prayed %>
+  <%= f.submit %>
+<% end %>
